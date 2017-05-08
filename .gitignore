@@ -1,0 +1,10 @@
+.netrwhist
+
+.vim/bundle/*
+!.vim/bundle/.gitignore
+
+.vim/backup/*
+!.vim/backup/.gitignore
+
+.vim/swap/*
+!.vim/swap/.gitignore
