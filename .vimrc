@@ -13,11 +13,14 @@ set autoread					    " Reload changes on disk
 set softtabstop=4				    " Width of the indent in insert mode
 set shiftwidth=4				    " Width of the indent in normal mode
 let mapleader=','				    " Change default leader to comma
+set backupdir=~/.vim/backup//			    " Put backup outside of project root
+set directory=~/.vim/swap//			    " Put swap files outside of project root
 
 "-------------------------- Visuals ---------------------------"
 
 set t_Co=256					    " Use 256 colors. This is useful for terminal vim
-colorscheme atom-dark-256			    " Current color scheme
+set background=dark				    " Dark background
+colorscheme sourcerer				    " Current color scheme
 
 " Make line number background same as editor background
 hi LineNr guibg=bg
@@ -35,18 +38,6 @@ set incsearch					    " Enable Incremental Search
 " Shortcut to edit the .vimrc file
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 
-" Add simple highlight removal on vinegar search
-nmap <Leader><space> :nohlsearch<cr>
-
-" Make it easier to open nerdtree
-nmap <Leader>1 :NERDTreeToggle<cr>
-
-" Make it easier to search with Ctrl-P for tags 
-nmap <c-R> :CtrlPBufTag<cr>
-
-" Make it easier to browse recent files with Ctrl-P
-nmap <D-e> :CtrlPMRUFiles<cr>
-
 " Easier to search with c-tags
 nmap <Leader>f :tag<space>
 
@@ -55,16 +46,10 @@ nmap <Leader>f :tag<space>
 set splitbelow					    " New horizontal splits will be created below the current window
 set splitright					    " New vertical splits will be created to the right of the current window
 
-" Easier switch to top pane on split
+" Easier to switch to panes on splits (same navigation as in normal mode) 
 nmap <C-J> <C-W><C-J>
-
-" Easier switch to bottom pane on split
 nmap <C-K> <C-W><C-K>
-
-" Easier switch to left pane on split
 nmap <C-H> <C-W><C-H>
-
-" Easier switch to right pane on split
 nmap <C-L> <C-W><C-L>
 
 "--------------------- Plugin Parameters ----------------------"
@@ -73,18 +58,37 @@ nmap <C-L> <C-W><C-L>
 "/ Ctrl-P
 "/
 
-" Ignored Files
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
-" Result Window configuration
+let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git'
 let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+
+" Make it easier to search with Ctrl-P for tags 
+nmap <c-R> :CtrlPBufTag<cr>
+
+" Make it easier to browse recent files with Ctrl-P
+nmap <D-e> :CtrlPMRUFiles<cr>
 
 "/
 "/ NERDTree
 "/
 
-" Don't allow nerdtree to modify vinegar
+" Don't allow nerdtree to modify vinegar browser
 let NERDTreeHijackNetrw = 0
+
+" Make it easier to open nerdtree
+nmap <Leader>1 :NERDTreeToggle<cr>
+
+"/
+"/ Vinegar
+"/
+
+" Add simple highlight removal on vinegar search
+nmap <Leader><space> :nohlsearch<cr>
+
+"/
+"/ Vinegar
+"/
+set grepprg=ack
+let g:grep_cmd_opts='--noheading'
 
 "--------------------- Automatic Commands ---------------------"
 
@@ -100,3 +104,8 @@ augroup END
 " - Press ctrl+] on top of a method to see where it was defined
 " - Press ctrl+^ after the previous command to return to the original file
 " - ctrl+w and | will make the split fill the screen
+" - gg to go to the end of the file
+" - G to go to the beginning of the file
+" - Ack 'pattern' will make a site-wide search
+" - :Gsearch 'pattern' will make a site-wide search for the pattern to replace
+" - ctrl + 6 = back to previous file

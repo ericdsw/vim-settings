@@ -13,9 +13,14 @@ if has("gui_running")
     if has("gui_gtk2") " Font configuration for gtk2 (linux UI editor)
 	set guifont=Cousine\ 10
     elseif has("gui_macvim") " Font configuration for macvim
-	set guifont=Fira_Code:11
+	set guifont=Fira\ Code:h14
 	set macligatures
     elseif has("gui_win32") " Font configuration for windoge (lol)
 	set guifont==Consolas:h11:cANSI
     endif
+endif
+
+" Prevent calling printing on macvim
+if has("gui_macvim")
+    macmenu &File.Print key=<nop>
 endif
