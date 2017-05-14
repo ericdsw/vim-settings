@@ -24,3 +24,6 @@ endif
 if has("gui_macvim")
     macmenu &File.Print key=<nop>
 endif
+
+" Line number color in non-termianl vim
+

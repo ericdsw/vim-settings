@@ -10,11 +10,24 @@ set backspace=indent,eol,start			    " Make backspace behave normally
 set number					    " Display line numbers
 set autoindent					    " New lines keeps current indentation
 set autoread					    " Reload changes on disk
-set softtabstop=4				    " Width of the indent in insert mode
-set shiftwidth=4				    " Width of the indent in normal mode
 let mapleader=','				    " Change default leader to comma
 set backupdir=~/.vim/backup//			    " Put backup outside of project root
 set directory=~/.vim/swap//			    " Put swap files outside of project root
+
+set noerrorbells visualbell t_vb=                   " Disable error bells
+set autowriteall                                    " Automatically write the file when switching buffers.
+set complete=.,w,b,u 				    " Set our desired autocompletion matching.
+set tabstop=8					    
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+
+" Get rid of anoying line breaks
+set wrap                                            
+set linebreak
+set nolist
+set textwidth=0
+set wrapmargin=0
 
 "-------------------------- Visuals ---------------------------"
 
@@ -23,6 +36,7 @@ set background=dark				    " Dark background
 colorscheme sourcerer				    " Current color scheme
 
 " Make line number background same as editor background
+hi LineNr ctermbg=none
 hi LineNr guibg=bg
 
 " Make split separator invisible
@@ -37,6 +51,9 @@ set incsearch					    " Enable Incremental Search
 
 " Shortcut to edit the .vimrc file
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
+
+" Shortcut to edit snippets
+nmap <Leader>es :e ~/.vim/UltiSnips/
 
 " Easier to search with c-tags
 nmap <Leader>f :tag<space>
@@ -85,10 +102,49 @@ nmap <Leader>1 :NERDTreeToggle<cr>
 nmap <Leader><space> :nohlsearch<cr>
 
 "/
-"/ Vinegar
+"/ GReplace
 "/
+
 set grepprg=ack
 let g:grep_cmd_opts='--noheading'
+
+"/
+"/ pvd
+"/
+let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
+
+"/
+"/ Ultisnip
+"/
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+
+"/
+"/ PHP vim namespaces
+"/
+
+" Expand classes in PHP use statements
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+" Make class or function use their FQN
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>nf <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
+
+" Sorts use statements based on length
+vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
 
 "--------------------- Automatic Commands ---------------------"
 
@@ -99,7 +155,7 @@ augroup autosourcing
 augroup END
 
 
-" Tips and Notes
+" Notes
 " - Press 'zz' to instantly center the screen where the cursor is located
 " - Press ctrl+] on top of a method to see where it was defined
 " - Press ctrl+^ after the previous command to return to the original file
@@ -109,3 +165,6 @@ augroup END
 " - Ack 'pattern' will make a site-wide search
 " - :Gsearch 'pattern' will make a site-wide search for the pattern to replace
 " - ctrl + 6 = back to previous file
+" - cs <character> = change surrounding characters
+" - ds <character> = deletes surrounding characters
+" - crtl + w + q = quit tab

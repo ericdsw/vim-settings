@@ -10,6 +10,20 @@ Plugin 'scrooloose/nerdtree'			" Tree viewer for filesystem
 Plugin 'flazz/vim-colorschemes'			" Color schemes
 Plugin 'mileszs/ack.vim'			" Ack site-wide search plugin (Ag was deprecated)
 Plugin 'skwp/greplace.vim'			" Search and Replace (depends on Ack)
+Plugin 'SirVer/ultisnips'			" Snippets plugin manager
+Plugin 'honza/vim-snippets'			" The actual snippets
+Plugin 'tpope/vim-surround'                     " Modify surrounding text
+Plugin 'ervandew/supertab'                      " Tab Completition
+
+" PHP Plugins
+Plugin 'StanAngeloff/php.vim'                   " Improved PHP syntax highlight
+Plugin 'arnaud-lb/vim-php-namespace'            " Better PHP Use statements
+Plugin 'tobyS/vmustache'                        " Dependency for pvd
+Plugin 'tobyS/pdv'                              " PHP Documentator
+Plugin 'stephpy/vim-php-cs-fixer'               " PSR-2 formatting
+
+" Godot Plugins
+Plugin 'quabug/vim-gdscript'			" GDScript syntax hightlight
 
 call vundle#end()				" Finalized plugin regitration, required
 filetype plugin indent on			" Required
