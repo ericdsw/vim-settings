@@ -14,6 +14,7 @@ Plugin 'SirVer/ultisnips'			" Snippets plugin manager
 Plugin 'honza/vim-snippets'			" The actual snippets
 Plugin 'tpope/vim-surround'                     " Modify surrounding text
 Plugin 'ervandew/supertab'                      " Tab Completition
+Plugin 'editorconfig/editorconfig-vim'          " EditorConfig support
 
 " PHP Plugins
 Plugin 'StanAngeloff/php.vim'                   " Improved PHP syntax highlight

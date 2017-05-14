@@ -75,8 +75,8 @@ nmap <C-L> <C-W><C-L>
 "/ Ctrl-P
 "/
 
-let g:ctrlp_custom_ignore = 'vendor\|node_modules\|DS_Store\|git'
-let g:ctrlp_match_window = 'top,order:ttb,min:1,max:30,results:30'
+let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git'
+let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
 
 " Make it easier to search with Ctrl-P for tags 
 nmap <c-R> :CtrlPBufTag<cr>
@@ -89,7 +89,7 @@ nmap <D-e> :CtrlPMRUFiles<cr>
 "/
 
 " Don't allow nerdtree to modify vinegar browser
-let NERDTreeHijackNetrw = 0
+let NERDTreeHijackNetrw=0
 
 " Make it easier to open nerdtree
 nmap <Leader>1 :NERDTreeToggle<cr>
@@ -109,9 +109,15 @@ set grepprg=ack
 let g:grep_cmd_opts='--noheading'
 
 "/
+"/ php-cs-fixer
+"/
+let g:php_cs_fixer_level="psr2"
+let g:php_cs_fixer_fixers_list="-psr0"
+
+"/
 "/ pvd
 "/
-let g:pdv_template_dir = $HOME ."/.vim/bundle/pdv/templates_snip"
+let g:pdv_template_dir=$HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
 
 "/
