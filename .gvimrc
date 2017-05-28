@@ -11,12 +11,12 @@ set guioptions-=T				    " Removes Toolbar
 " Font Definition
 if has("gui_running")
     if has("gui_gtk2") " Font configuration for gtk2 (linux UI editor)
-	set guifont=Cousine\ 10
+    	set guifont=Cousine\ 10
     elseif has("gui_macvim") " Font configuration for macvim
-	set guifont=Fira\ Code:h14
-	set macligatures
+    	set guifont=Fira\ Code:h14
+	    set macligatures
     elseif has("gui_win32") " Font configuration for windoge (lol)
-	set guifont==Consolas:h11:cANSI
+	    set guifont==Consolas:h11:cANSI
     endif
 endif
 
@@ -24,6 +24,3 @@ endif
 if has("gui_macvim")
     macmenu &File.Print key=<nop>
 endif
-
-" Line number color in non-termianl vim
-

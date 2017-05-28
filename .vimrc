@@ -1,24 +1,24 @@
 "-------------------- Plugin Configuration ---------------------"
 
-set nocompatible				    " We want the latest vim setup 
-so ~/.vim/plugins.vim				    " Load plugin configuration file
+set nocompatible                            " We want the latest vim setup 
+so ~/.vim/plugins.vim				        " Load plugin configuration file
 
 "-------------------- General Configuration --------------------"
 
-syntax enable					    " Enable syntax highlight
-set backspace=indent,eol,start			    " Make backspace behave normally
-set number					    " Display line numbers
-set autoindent					    " New lines keeps current indentation
-set autoread					    " Reload changes on disk
-let mapleader=','				    " Change default leader to comma
-set backupdir=~/.vim/backup//			    " Put backup outside of project root
-set directory=~/.vim/swap//			    " Put swap files outside of project root
+syntax enable                               " Enable syntax highlight
+set backspace=indent,eol,start              " Make backspace behave normally
+set number                                  " Display line numbers
+set autoindent                              " New lines keeps current indentation
+set autoread                                " Reload changes on disk
+let mapleader=','                           " Change default leader to comma
+set backupdir=~/.vim/backup//               " Put backup outside of project root
+set directory=~/.vim/swap//                 " Put swap files outside of project root
 
-set noerrorbells visualbell t_vb=                   " Disable error bells
-set autowriteall                                    " Automatically write the file when switching buffers.
-set complete=.,w,b,u 				    " Set our desired autocompletion matching.
-set tabstop=8					    
-set expandtab
+set noerrorbells visualbell t_vb=           " Disable error bells
+set autowriteall                            " Automatically write the file when switching buffers.
+set complete=.,w,b,u                        " Set our desired autocompletion matching.
+set tabstop=4                               " Tab size equivalent to 4 spaces (for languages that use tabs) 
+set expandtab                               " Replaces tabs with spaces by default
 set softtabstop=4
 set shiftwidth=4
 
@@ -31,9 +31,9 @@ set wrapmargin=0
 
 "-------------------------- Visuals ---------------------------"
 
-set t_Co=256					    " Use 256 colors. This is useful for terminal vim
-set background=dark				    " Dark background
-colorscheme sourcerer				    " Current color scheme
+set t_Co=256                                " Use 256 colors. This is useful for terminal vim
+set background=dark                         " Background color
+colorscheme apprentice                      " Current color scheme
 
 " Make line number background same as editor background
 hi LineNr ctermbg=none
@@ -44,8 +44,8 @@ hi vertsplit guifg=bg guibg=bg
 
 "-------------------------- Search  ---------------------------"
 
-set hlsearch					    " Enable General Search
-set incsearch					    " Enable Incremental Search
+set hlsearch                                " Enable General Search
+set incsearch                               " Enable Incremental Search
 
 "------------------------- Mappings  --------------------------"
 
@@ -58,10 +58,13 @@ nmap <Leader>es :e ~/.vim/UltiSnips/
 " Easier to search with c-tags
 nmap <Leader>f :tag<space>
 
+" Map double j to escape
+inoremap jj <esc>
+
 "---------------------- Split Management ----------------------"
 
-set splitbelow					    " New horizontal splits will be created below the current window
-set splitright					    " New vertical splits will be created to the right of the current window
+set splitbelow                              " New horizontal splits will be created below the current window
+set splitright                              " New vertical splits will be created to the right of the current window
 
 " Easier to switch to panes on splits (same navigation as in normal mode) 
 nmap <C-J> <C-W><C-J>
@@ -88,7 +91,7 @@ nmap <D-e> :CtrlPMRUFiles<cr>
 "/ NERDTree
 "/
 
-" Don't allow nerdtree to modify vinegar browser
+" Don't allow nerdtree to modify newtree
 let NERDTreeHijackNetrw=0
 
 " Make it easier to open nerdtree
@@ -174,3 +177,4 @@ augroup END
 " - cs <character> = change surrounding characters
 " - ds <character> = deletes surrounding characters
 " - crtl + w + q = quit tab
+" - gt = go to next tab; Gt = go to previous tab

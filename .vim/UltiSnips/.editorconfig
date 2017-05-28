@@ -1,0 +1,3 @@
+# Configuration for gdscript snippets
+[gdscript.snippets]
+indent_style = tab

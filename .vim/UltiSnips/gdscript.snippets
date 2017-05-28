@@ -1,0 +1,37 @@
+# Platform lifecycle methods
+
+snippet red
+func _ready():
+	$0
+endsnippet
+
+snippet proc
+func _process(delta):
+	$0
+endsnippet
+
+snippet fproc
+func _fixed_process(delta):
+	$0
+endsnippet
+
+snippet inp
+func _input(event):
+	$0
+endsnippet
+
+snippet uinp
+func _unhandled_input(event):
+	$0
+endsnippet
+
+# Custom
+
+# Creates a new simplified timer reference
+snippet tigen
+Timer_Generator.create_timer($1, $2, $3)$0
+endsnippet
+
+snippet ftigen
+Timer_Generator.create_timer($1, $2, $3, $4, $5)$0
+endsnippet
