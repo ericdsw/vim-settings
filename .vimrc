@@ -33,7 +33,13 @@ set wrapmargin=0
 
 set t_Co=256                                " Use 256 colors. This is useful for terminal vim
 set background=dark                         " Background color
-colorscheme apprentice                      " Current color scheme
+
+" Due to color rendering, graphical vim clients and terminal vim will have different colorschemes
+if has("gui_running") 
+    colorscheme crunchbang                  " Current color scheme (for guivim)
+else
+    colorscheme apprentice                  " Current color scheme (for terminal vim)
+endif
 
 " Make line number background same as editor background
 hi LineNr ctermbg=none
@@ -154,6 +160,11 @@ autocmd FileType php noremap <Leader>nf :call PhpExpandClass()<CR>
 
 " Sorts use statements based on length
 vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr>
+
+"/
+"/ PHP vim namespaces
+"/
+autocmd FileType gdscript setlocal commentstring=#\ %s
 
 "--------------------- Automatic Commands ---------------------"
 

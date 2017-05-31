@@ -7,7 +7,6 @@ Plugin 'VundleVim/Vundle.vim'                   " Vundle plugin, required
 Plugin 'tpope/vim-vinegar'                      " Better file browsing
 Plugin 'ctrlpvim/ctrlp.vim'                     " Finder for vim
 Plugin 'scrooloose/nerdtree'                    " Tree viewer for filesystem
-Plugin 'flazz/vim-colorschemes'                 " Color schemes
 Plugin 'mileszs/ack.vim'                        " Ack site-wide search plugin (Ag was deprecated)
 Plugin 'skwp/greplace.vim'                      " Search and Replace (depends on Ack)
 Plugin 'SirVer/ultisnips'                       " Snippets plugin manager
@@ -16,6 +15,7 @@ Plugin 'tpope/vim-surround'                     " Modify surrounding text
 Plugin 'ervandew/supertab'                      " Tab Completition
 Plugin 'editorconfig/editorconfig-vim'          " EditorConfig support
 Plugin 'sheerun/vim-polyglot'                   " Superior syntax highlight
+Plugin 'tpope/vim-commentary'                   " Comment support
 
 " PHP Plugins
 Plugin 'StanAngeloff/php.vim'                   " Improved PHP syntax highlight
