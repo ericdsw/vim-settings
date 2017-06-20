@@ -48,6 +48,9 @@ hi LineNr guibg=bg
 " Make split separator invisible
 hi vertsplit guifg=bg guibg=bg
 
+" Change cursor highlight color
+highlight Cursor guifg=black guibg=#777777
+
 "-------------------------- Search  ---------------------------"
 
 set hlsearch                                " Enable General Search
