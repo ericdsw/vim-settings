@@ -36,7 +36,7 @@ set background=dark                         " Background color
 
 " Due to color rendering, graphical vim clients and terminal vim will have different colorschemes
 if has("gui_running") 
-    colorscheme crunchbang                  " Current color scheme (for guivim)
+    colorscheme solarized                   " Current color scheme (for guivim)
 else
     colorscheme apprentice                  " Current color scheme (for terminal vim)
 endif
