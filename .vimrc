@@ -36,9 +36,11 @@ set background=dark                         " Background color
 
 " Due to color rendering, graphical vim clients and terminal vim will have different colorschemes
 if has("gui_running") 
-    colorscheme solarized                   " Current color scheme (for guivim)
+    colorscheme crunchbang                  " Current color scheme (for guivim)
 else
-    colorscheme apprentice                  " Current color scheme (for terminal vim)
+    let g:solarized_termtrans=1
+    let g:solarized_termcolors=256          " Fixes issue with vim's solarized colorscheme in item2
+    colorscheme solarized                   " Current color scheme (for terminal vim)
 endif
 
 " Make line number background same as editor background
@@ -168,6 +170,20 @@ vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr
 "/ PHP vim namespaces
 "/
 autocmd FileType gdscript setlocal commentstring=#\ %s
+
+"/
+"/ PHP vim namespaces
+"/
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['ESLint', 'JSLint']
 
 "--------------------- Automatic Commands ---------------------"
 

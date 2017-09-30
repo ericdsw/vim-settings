@@ -1,6 +1,6 @@
 " General UI Configuration
 set guioptions-=e				    " Disable GUI Tabs
-set linespace=12				    " Custom line space
+set linespace=14				    " Custom line space
 set guioptions-=l				    " Disable left scroll bar
 set guioptions-=L				    " Disable left scroll bar for splits
 set guioptions-=r				    " Disable right scroll bar

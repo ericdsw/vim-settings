@@ -17,6 +17,7 @@ Plugin 'editorconfig/editorconfig-vim'          " EditorConfig support
 Plugin 'sheerun/vim-polyglot'                   " Superior syntax highlight
 Plugin 'tpope/vim-commentary'                   " Comment support
 Plugin 'godlygeek/tabular'                      " Character alignment
+Plugin 'vim-syntastic/syntastic'                " Language Linter
 
 " PHP Plugins
 Plugin 'StanAngeloff/php.vim'                   " Improved PHP syntax highlight
