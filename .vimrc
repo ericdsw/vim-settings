@@ -208,3 +208,5 @@ augroup END
 " - ds <character> = deletes surrounding characters
 " - crtl + w + q = quit tab
 " - gt = go to next tab; Gt = go to previous tab
+" - :cdo = applies to all files listed on quickfix
+" - %s/String/ChangedString = changes all String to ChangedString

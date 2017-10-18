@@ -27,7 +27,7 @@ Plugin 'tobyS/pdv'                              " PHP Documentator
 Plugin 'stephpy/vim-php-cs-fixer'               " PSR-2 formatting
 
 " Godot Plugins
-Plugin 'quabug/vim-gdscript'                    " GDScript syntax hightlight
+Plugin 'Rubonnek/vim-gdscript'                    " GDScript syntax hightlight
 
 call vundle#end()                               " Finalized plugin regitration, required
 filetype plugin indent on                       " Required
