@@ -8,3 +8,5 @@
 
 .vim/swap/*
 !.vim/swap/.gitignore
+
+bin/

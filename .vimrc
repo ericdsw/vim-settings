@@ -1,6 +1,6 @@
 "-------------------- Plugin Configuration ---------------------"
 
-set nocompatible                            " We want the latest vim setup 
+set nocompatible                            " We want the latest vim setup
 so ~/.vim/plugins.vim				        " Load plugin configuration file
 
 "-------------------- General Configuration --------------------"
@@ -17,13 +17,13 @@ set directory=~/.vim/swap//                 " Put swap files outside of project 
 set noerrorbells visualbell t_vb=           " Disable error bells
 set autowriteall                            " Automatically write the file when switching buffers.
 set complete=.,w,b,u                        " Set our desired autocompletion matching.
-set tabstop=4                               " Tab size equivalent to 4 spaces (for languages that use tabs) 
+set tabstop=4                               " Tab size equivalent to 4 spaces (for languages that use tabs)
 set expandtab                               " Replaces tabs with spaces by default
 set softtabstop=4
 set shiftwidth=4
 
 " Get rid of anoying line breaks
-set wrap                                            
+set wrap
 set linebreak
 set nolist
 set textwidth=0
@@ -35,8 +35,8 @@ set t_Co=256                                " Use 256 colors. This is useful for
 set background=dark                         " Background color
 
 " Due to color rendering, graphical vim clients and terminal vim will have different colorschemes
-if has("gui_running") 
-    colorscheme crunchbang                  " Current color scheme (for guivim)
+if has("gui_running")
+    colorscheme earthsong                   " Current color scheme (for guivim)
 else
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256          " Fixes issue with vim's solarized colorscheme in item2
@@ -77,7 +77,7 @@ inoremap jj <esc>
 set splitbelow                              " New horizontal splits will be created below the current window
 set splitright                              " New vertical splits will be created to the right of the current window
 
-" Easier to switch to panes on splits (same navigation as in normal mode) 
+" Easier to switch to panes on splits (same navigation as in normal mode)
 nmap <C-J> <C-W><C-J>
 nmap <C-K> <C-W><C-K>
 nmap <C-H> <C-W><C-H>
@@ -92,7 +92,7 @@ nmap <C-L> <C-W><C-L>
 let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git'
 let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
 
-" Make it easier to search with Ctrl-P for tags 
+" Make it easier to search with Ctrl-P for tags
 nmap <c-R> :CtrlPBufTag<cr>
 
 " Make it easier to browse recent files with Ctrl-P
@@ -144,6 +144,14 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 
 "/
+"/ YouCompleteMe
+"/
+
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"/
 "/ PHP vim namespaces
 "/
 
@@ -174,16 +182,16 @@ autocmd FileType gdscript setlocal commentstring=#\ %s
 "/
 "/ PHP vim namespaces
 "/
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
-let g:syntastic_javascript_checkers = ['ESLint', 'JSLint']
+" let g:syntastic_javascript_checkers = ['ESLint', 'JSLint']
 
 "--------------------- Automatic Commands ---------------------"
 

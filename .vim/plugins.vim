@@ -12,12 +12,13 @@ Plugin 'skwp/greplace.vim'                      " Search and Replace (depends on
 Plugin 'SirVer/ultisnips'                       " Snippets plugin manager
 Plugin 'honza/vim-snippets'                     " The actual snippets
 Plugin 'tpope/vim-surround'                     " Modify surrounding text
-Plugin 'ervandew/supertab'                      " Tab Completition
+Plugin 'ervandew/supertab'                      " Tab Completition (bridge between Ultisnips and youcompleteme)
 Plugin 'editorconfig/editorconfig-vim'          " EditorConfig support
 Plugin 'sheerun/vim-polyglot'                   " Superior syntax highlight
 Plugin 'tpope/vim-commentary'                   " Comment support
 Plugin 'godlygeek/tabular'                      " Character alignment
-Plugin 'vim-syntastic/syntastic'                " Language Linter
+Plugin 'Valloric/YouCompleteMe'                 " Better auto complete
+" Plugin 'vim-syntastic/syntastic'                " Language Linter
 
 " PHP Plugins
 Plugin 'StanAngeloff/php.vim'                   " Improved PHP syntax highlight
@@ -27,7 +28,7 @@ Plugin 'tobyS/pdv'                              " PHP Documentator
 Plugin 'stephpy/vim-php-cs-fixer'               " PSR-2 formatting
 
 " Godot Plugins
-Plugin 'Rubonnek/vim-gdscript'                    " GDScript syntax hightlight
+Plugin 'ericdsw/vim-gdscript'                    " GDScript syntax hightlight
 
 call vundle#end()                               " Finalized plugin regitration, required
 filetype plugin indent on                       " Required
