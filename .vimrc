@@ -34,13 +34,14 @@ set wrapmargin=0
 set t_Co=256                                " Use 256 colors. This is useful for terminal vim
 set background=dark                         " Background color
 
-" Due to color rendering, graphical vim clients and terminal vim will have different colorschemes
+" Due to color rendering, graphical vim clients and terminal vim will have different configurations
 if has("gui_running")
-    colorscheme earthsong                   " Current color scheme (for guivim)
+    colorscheme atomdark256                  " Current color scheme (for guivim)
 else
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256          " Fixes issue with vim's solarized colorscheme in item2
-    colorscheme solarized                   " Current color scheme (for terminal vim)
+    colorscheme solarized
+    set mouse=nicr
 endif
 
 " Make line number background same as editor background
@@ -52,6 +53,9 @@ hi vertsplit guifg=bg guibg=bg
 
 " Change cursor highlight color
 highlight Cursor guifg=black guibg=#777777
+
+" Enable syntax highlight for .md files
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 "-------------------------- Search  ---------------------------"
 
@@ -91,6 +95,7 @@ nmap <C-L> <C-W><C-L>
 
 let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git'
 let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
+let g:ctrlp_show_hidden=1
 
 " Make it easier to search with Ctrl-P for tags
 nmap <c-R> :CtrlPBufTag<cr>
@@ -178,6 +183,26 @@ vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr
 "/ PHP vim namespaces
 "/
 autocmd FileType gdscript setlocal commentstring=#\ %s
+
+"/
+"/ YouCompleteMe
+"/
+
+" Don't display errors in the editor
+" let g:ycm_show_diagnostics_ui = 0
+
+" Maps checking for errors in file
+nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
+
+" Auto-closes preview window with method or class documentation after exiting insert mode
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+"/
+"/ OmniSharp
+"/
+
+let g:OmniSharp_server_type = 'v1'
+nnoremap <leader>th :OmniSharpHighlightTypes<cr>
 
 "/
 "/ PHP vim namespaces
