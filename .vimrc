@@ -40,7 +40,7 @@ if has("gui_running")
 else
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256          " Fixes issue with vim's solarized colorscheme in item2
-    colorscheme solarized
+    colorscheme atomdark256
     set mouse=nicr
 endif
 
@@ -202,6 +202,21 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 "/
 
 let g:OmniSharp_server_type = 'v1'
+
+" Omnisharp / syntastic cooperation
+let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
+
+nnoremap <leader>th :OmniSharpHighlightTypes<cr>
+
+augroup omnisharp_commands
+    autocmd!
+    autocmd BufWritePost *.cs call OmniSharp#AddToProject()
+    autocmd FileType cs nnoremap <leader>x :OmniSharpFixIssue<cr>
+    autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
+augroup END
+
+nnoremap <leader>rl :OmniSharpReloadSolution<cr>
+nnoremap <leader>cf :OmniSharpCodeFormat<cr>
 nnoremap <leader>th :OmniSharpHighlightTypes<cr>
 
 "/
