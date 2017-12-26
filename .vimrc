@@ -39,7 +39,7 @@ if has("gui_running")
     colorscheme atomdark256                  " Current color scheme (for guivim)
 else
     let g:solarized_termtrans=1
-    let g:solarized_termcolors=256          " Fixes issue with vim's solarized colorscheme in item2
+    let g:solarized_termcolors=256           " Fixes issue with vim's solarized colorscheme in item2
     colorscheme atomdark256
     set mouse=nicr
 endif
@@ -49,7 +49,7 @@ hi LineNr ctermbg=none
 hi LineNr guibg=bg
 
 " Make split separator invisible
-hi vertsplit guifg=bg guibg=bg
+hi vertsplit ctermfg=bg ctermbg=bg 
 
 " Change cursor highlight color
 highlight Cursor guifg=black guibg=#777777

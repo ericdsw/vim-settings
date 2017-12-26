@@ -8,6 +8,9 @@ set guioptions-=R				    " Disable right scroll bar for splits
 set guioptions-=m				    " Disables Menu
 set guioptions-=T				    " Removes Toolbar
 
+" Make split separator invisible
+hi vertsplit guifg=bg guibg=bg
+
 " Font Definition
 if has("gui_running")
     if has("gui_gtk2") " Font configuration for gtk2 (linux UI editor)
