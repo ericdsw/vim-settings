@@ -34,6 +34,9 @@ Plugin 'ericdsw/vim-gdscript'                   " GDScript syntax hightlight
 Plugin 'OmniSharp/omnisharp-vim'                " C# IDE-like features
 Plugin 'OrangeT/vim-csharp'                     " C# syntax highlight
 
+" Javascript Plugins
+Plugin 'pangloss/vim-javascript'                " Better Javascript Support
+
 call vundle#end()                               " Finalized plugin regitration, required
 filetype plugin indent on                       " Required
 
