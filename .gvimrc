@@ -11,7 +11,7 @@ set guioptions-=T				    " Removes Toolbar
 " Font Definition
 if has("gui_running")
     if has("gui_gtk2") " Font configuration for gtk2 (linux UI editor)
-    	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
+    	set guifont=Ubuntu\ Mono\ Regular\ 11
     elseif has("gui_macvim") " Font configuration for macvim
     	set guifont=Fira\ Code:h14
 	    set macligatures
