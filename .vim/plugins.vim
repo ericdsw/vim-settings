@@ -19,6 +19,12 @@ Plugin 'sheerun/vim-polyglot'                   " Superior syntax highlight
 Plugin 'tpope/vim-commentary'                   " Comment support
 Plugin 'godlygeek/tabular'                      " Character alignment
 Plugin 'Valloric/YouCompleteMe'                 " Better auto complete
+Plugin 'vim-airline/vim-airline'                " Improved status bar
+Plugin 'vim-airline/vim-airline-themes'         " Status bar themes
+Plugin 'tpope/vim-fugitive'                     " Git Integration
+
+" Colorschemes
+Plugin 'dracula/vim'
 
 " PHP Plugins
 Plugin 'StanAngeloff/php.vim'                   " Improved PHP syntax highlight
@@ -28,7 +34,7 @@ Plugin 'tobyS/pdv'                              " PHP Documentator
 Plugin 'stephpy/vim-php-cs-fixer'               " PSR-2 formatting
 
 " Godot Plugins
-Plugin 'ericdsw/vim-gdscript'                   " GDScript syntax hightlight
+Plugin 'calviken/vim-gdscript3'                 " GDScript 3 syntax highlight
 
 " C# Plugins
 Plugin 'OmniSharp/omnisharp-vim'                " C# IDE-like features

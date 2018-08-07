@@ -36,11 +36,9 @@ set background=dark                         " Background color
 
 " Due to color rendering, graphical vim clients and terminal vim will have different configurations
 if has("gui_running")
-    colorscheme atomdark256                  " Current color scheme (for guivim)
+    colorscheme dracula                  " Current color scheme (for guivim)
 else
-    let g:solarized_termtrans=1
-    let g:solarized_termcolors=256           " Fixes issue with vim's solarized colorscheme in item2
-    colorscheme atomdark256
+    colorscheme dracula
     set mouse=nicr
 endif
 
@@ -49,7 +47,8 @@ hi LineNr ctermbg=none
 hi LineNr guibg=bg
 
 " Make split separator invisible
-hi vertsplit ctermfg=bg ctermbg=bg 
+hi foldcolumn guibg=bg
+hi VertSplit guibg=bg guibg=bg
 
 " Change cursor highlight color
 highlight Cursor guifg=black guibg=#777777
@@ -155,6 +154,7 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
 
 "/
 "/ PHP vim namespaces
@@ -196,6 +196,10 @@ nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 
 " Auto-closes preview window with method or class documentation after exiting insert mode
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" Debugging
+let g:ycm_server_keep_log_files = 1
+let g:ycm_server_log_level = 'debug'
 
 "/
 "/ OmniSharp
