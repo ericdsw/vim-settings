@@ -5,13 +5,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Build YouCompleteMe plugin
-function BuildYCM(info)
-    if a:info.status == 'installed' || a:info.force
-        !.install.py --clang-completer --cs-completer --java-completer
-    endif
-endfunction
-
 call plug#begin('~/.vim/bundle')
 
 " General Plugins
@@ -31,7 +24,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
-Plug 'Valloric/YouCompleteMe', { 'do' : function('BuildYCM') }
+Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --clang-completer --cs-completer --java-completer' }
 
 " Colorschemes
 Plug 'dracula/vim'
@@ -41,6 +34,7 @@ Plug 'junegunn/seoul256.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'nightsense/snow'
+Plug 'sonph/onehalf'
 
 " PHP Plugs
 Plug 'StanAngeloff/php.vim', { 'for' : 'php' }

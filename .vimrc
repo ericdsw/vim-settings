@@ -1,7 +1,7 @@
 "-------------------- Plugin Configuration ---------------------"
 
 set nocompatible                            " We want the latest vim setup
-so ~/.vim/plugins.vim				        " Load plugin configuration file
+so ~/.vim/plug.vim				        " Load plugin configuration file
 
 "-------------------- General Configuration --------------------"
 
@@ -36,9 +36,9 @@ set background=dark                         " Background color
 
 " Due to color rendering, graphical vim clients and terminal vim will have different configurations
 if has("gui_running")
-    colorscheme dracula                  " Current color scheme (for guivim)
+    colorscheme onedark
 else
-    colorscheme dracula
+    colorscheme onedark
     set mouse=nicr
 endif
 
