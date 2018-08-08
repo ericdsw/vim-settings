@@ -93,7 +93,7 @@ nmap <C-L> <C-W><C-L>
 "/ Ctrl-P
 "/
 
-let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git\|.import'
 let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
 let g:ctrlp_show_hidden=1
 
@@ -112,6 +112,9 @@ let NERDTreeHijackNetrw=0
 
 " Make it easier to open nerdtree
 nmap <Leader>1 :NERDTreeToggle<cr>
+
+" Show hidden files by default
+let NERDTreeShowHidden=1
 
 "/
 "/ Vinegar
