@@ -38,7 +38,8 @@ set background=dark                         " Background color
 if has("gui_running")
     colorscheme onedark
 else
-    colorscheme onedark
+    set termguicolors
+    colorscheme deep-space
     set mouse=nicr
 endif
 
@@ -155,6 +156,9 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+
+" Note: supertab allows both youcompleteme and ultisnips to be mapped to 'tab',
+" even if it's mapped to another key in this configuration
 
 "/
 "/ PHP vim namespaces

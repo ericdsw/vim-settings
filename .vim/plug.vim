@@ -12,7 +12,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'skwp/greplace.vim'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
@@ -23,6 +22,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
+Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --clang-completer --cs-completer --java-completer' }
 
@@ -35,6 +36,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
 Plug 'nightsense/snow'
 Plug 'sonph/onehalf'
+Plug 'romainl/flattened'
+Plug 'tyrannicaltoucan/vim-deep-space'
 
 " PHP Plugs
 Plug 'StanAngeloff/php.vim', { 'for' : 'php' }
