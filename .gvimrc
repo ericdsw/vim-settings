@@ -14,7 +14,8 @@ hi vertsplit guifg=bg guibg=bg
 " Font Definition
 if has("gui_running")
     if has("gui_gtk2") " Font configuration for gtk2 (linux UI editor)
-    	set guifont=Source\ Code\ Pro\ for\ Powerline\ Medium\ 10
+    	set guifont=Source\ Code\ Pro\ For\ Powerline\ Semibold\ 10
+        set linespace=14
     elseif has("gui_macvim") " Font configuration for macvim
     	set guifont=Fira\ Code:h14
 	    set macligatures
