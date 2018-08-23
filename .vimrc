@@ -1,7 +1,7 @@
 "-------------------- Plugin Configuration ---------------------"
 
 set nocompatible                            " We want the latest vim setup
-so ~/.vim/plugins.vim				        " Load plugin configuration file
+so ~/.vim/plug.vim				        " Load plugin configuration file
 
 "-------------------- General Configuration --------------------"
 
@@ -36,11 +36,10 @@ set background=dark                         " Background color
 
 " Due to color rendering, graphical vim clients and terminal vim will have different configurations
 if has("gui_running")
-    colorscheme atomdark256                  " Current color scheme (for guivim)
+    colorscheme onedark
 else
-    let g:solarized_termtrans=1
-    let g:solarized_termcolors=256           " Fixes issue with vim's solarized colorscheme in item2
-    colorscheme atomdark256
+    set termguicolors
+    colorscheme onedark
     set mouse=nicr
 endif
 
@@ -49,7 +48,8 @@ hi LineNr ctermbg=none
 hi LineNr guibg=bg
 
 " Make split separator invisible
-hi vertsplit ctermfg=bg ctermbg=bg 
+hi foldcolumn guibg=bg
+hi VertSplit guibg=bg guibg=bg
 
 " Change cursor highlight color
 highlight Cursor guifg=black guibg=#777777
@@ -93,7 +93,7 @@ nmap <C-L> <C-W><C-L>
 "/ Ctrl-P
 "/
 
-let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git\|.import'
 let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
 let g:ctrlp_show_hidden=1
 
@@ -112,6 +112,9 @@ let NERDTreeHijackNetrw=0
 
 " Make it easier to open nerdtree
 nmap <Leader>1 :NERDTreeToggle<cr>
+
+" Show hidden files by default
+let NERDTreeShowHidden=1
 
 "/
 "/ Vinegar
@@ -155,6 +158,10 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+
+" Note: supertab allows both youcompleteme and ultisnips to be mapped to 'tab',
+" even if it's mapped to another key in this configuration
 
 "/
 "/ PHP vim namespaces
@@ -196,6 +203,10 @@ nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 
 " Auto-closes preview window with method or class documentation after exiting insert mode
 let g:ycm_autoclose_preview_window_after_insertion = 1
+
+" Debugging
+let g:ycm_server_keep_log_files = 1
+let g:ycm_server_log_level = 'debug'
 
 "/
 "/ OmniSharp
