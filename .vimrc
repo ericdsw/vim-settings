@@ -39,7 +39,7 @@ if has("gui_running")
     colorscheme onedark
 else
     set termguicolors
-    colorscheme deep-space
+    colorscheme onedark
     set mouse=nicr
 endif
 
