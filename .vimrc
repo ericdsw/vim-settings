@@ -158,7 +158,15 @@ let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
-let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+
+if has("unix")
+    let s:uname = system("uname -s")
+    if s:uname != "Darwin"
+        let g:ycm_server_python_interpreter = '/usr/bin/python3.6'
+    else
+        let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+    endif
+endif
 
 " Note: supertab allows both youcompleteme and ultisnips to be mapped to 'tab',
 " even if it's mapped to another key in this configuration
