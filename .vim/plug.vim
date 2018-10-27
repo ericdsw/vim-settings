@@ -5,7 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/bundle')
+call plug#begin('~/.vim/plug')
 
 " General Plugins
 Plug 'tpope/vim-vinegar'
@@ -25,7 +25,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
-Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --clang-completer --cs-completer --java-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --all' }
 
 " Colorschemes
 Plug 'dracula/vim'
@@ -47,7 +47,7 @@ Plug 'tobyS/pdv', { 'for' : 'php' }
 Plug 'stephpy/vim-php-cs-fixer', { 'for' : 'php' }
 
 " Godot Plugs
-Plug 'calviken/vim-gdscript3', { 'for' : ['gdscript', 'gdscript3'] }
+Plug 'calviken/vim-gdscript3'
 
 " C# Plugs
 Plug 'OmniSharp/omnisharp-vim', { 'for' : 'csharp' }
@@ -63,5 +63,4 @@ autocmd VimEnter *
     \ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
     \|  PlugInstall --sync | q
     \|endif
-
 

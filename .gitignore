@@ -2,6 +2,8 @@
 
 .vim/bundle/*
 !.vim/bundle/.gitignore
+.vim/plug/*
+!.vim/plug/.gitignore
 
 .vim/backup/*
 !.vim/backup/.gitignore

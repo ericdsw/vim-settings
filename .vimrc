@@ -159,8 +159,12 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
+
+" Set the python interpreter path
+" Note: the path will be different depending on whether the system is OSX or
+" Linux
 if has("unix")
-    let s:uname = system("uname -s")
+    let s:uname = substitute(system("uname"), '\n', '', '')
     if s:uname != "Darwin"
         let g:ycm_server_python_interpreter = '/usr/bin/python3.6'
     else
@@ -239,18 +243,19 @@ nnoremap <leader>cf :OmniSharpCodeFormat<cr>
 nnoremap <leader>th :OmniSharpHighlightTypes<cr>
 
 "/
-"/ PHP vim namespaces
+"/ Godot
 "/
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-" let g:syntastic_javascript_checkers = ['ESLint', 'JSLint']
+if !exists('g:ycm_semantic_triggers')
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers.gdscript3 = [
+    \'re!\w+',
+    \'.',
+    \'re!\bextends\s+',
+    \'re!\bexport\(',
+    \'re!\bfunc\s+',
+    \'re!"res://[^"]*'
+    \]
 
 "--------------------- Automatic Commands ---------------------"
 
