@@ -25,7 +25,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
-Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --all' }
+Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --all' }
 
 " Colorschemes
 Plug 'dracula/vim'
@@ -58,9 +58,17 @@ Plug 'pangloss/vim-javascript', { 'for' : 'javascript' }
 
 call plug#end()
 
+" Automatic Commands
+
 " Automatically install missing plugins on startup
 autocmd VimEnter *
     \ if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
     \|  PlugInstall --sync | q
     \|endif
+
+" Automatically reload the .vimrc file on edit
+augroup autosourcing
+    autocmd!
+    autocmd BufWritePost .vimrc source %
+augroup END
 

@@ -36,11 +36,19 @@ set background=dark                         " Background color
 
 " Due to color rendering, graphical vim clients and terminal vim will have different configurations
 if has("gui_running")
-    colorscheme onedark
+    try
+        colorscheme onedark
+    catch /^Vim\%((\a\+)\)\=E185/
+        " Colorscheme was not found, skipping
+    endtry
 else
     set termguicolors
-    colorscheme onedark
     set mouse=nicr
+    try
+        colorscheme onedark
+    catch
+        " Colorscheme was not found, skipping
+    endtry
 endif
 
 " Make line number background same as editor background
