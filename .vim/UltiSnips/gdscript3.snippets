@@ -1,7 +1,56 @@
+# Default delimiter used to separete code sections
+# Below the most commonly used delimiter are defined
 snippet delm
-# ======================================== $1 ======================================== #
+# ================================ $1 ================================ #
 endsnippet
 
+snippet delmlife
+# ================================ Lifecycle ================================ #
+endsnippet
+
+snippet delmpub
+# ================================= Public ================================== #
+endsnippet
+
+snippet delmpriv
+# ================================= Private ================================= #
+endsnippet
+
+snippet delmcall
+# ================================ Callbacks ================================ #
+endsnippet
+
+snippet delmiclass
+# ============================= Internal Classes ============================ #
+endsnippet
+
+snippet delmsmall
+############### $1
+endsnippet
+
+# Automatically generates a timer generator
 snippet tigen
-TimerGenerator.create_timer($1, $2, $3).start()
+TimerGenerator.create_timer(1, "$1", self).start()
+$0
+endsnippet
+
+# Shortcuts
+
+snippet gn
+get_node("$1")
+$0
+endsnippet
+
+# General purpose callback methods
+
+snippet onacpress
+func _on_action_pressed(event_name):
+	match event_name:
+		$0
+endsnippet
+
+snippet onacrel
+func _on_action_released(event_name):
+	match event_name:
+		$0
 endsnippet

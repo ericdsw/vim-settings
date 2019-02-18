@@ -34,6 +34,8 @@ set wrapmargin=0
 set t_Co=256                                " Use 256 colors. This is useful for terminal vim
 set background=dark                         " Background color
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 " Due to color rendering, graphical vim clients and terminal vim will have different configurations
 if has("gui_running")
     try
@@ -45,11 +47,27 @@ else
     set termguicolors
     set mouse=nicr
     try
-        colorscheme onedark
-    catch
+       colorscheme palenight
+       let g:palenight_terminal_italics=1
+       if (has("nvim"))
+           let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+       endif
+   catch
         " Colorscheme was not found, skipping
     endtry
 endif
+
+let g:lightline = {
+      \ 'colorscheme': 'palenight',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+
 
 " Make line number background same as editor background
 hi LineNr ctermbg=none
@@ -101,7 +119,7 @@ nmap <C-L> <C-W><C-L>
 "/ Ctrl-P
 "/
 
-let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git\|.import'
+let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git\|.import\|addons'
 let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
 let g:ctrlp_show_hidden=1
 

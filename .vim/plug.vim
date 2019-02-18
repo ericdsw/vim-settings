@@ -11,21 +11,21 @@ call plug#begin('~/.vim/plug')
 Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
-Plug 'skwp/greplace.vim'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --all' }
+Plug 'yegappan/greplace'
+Plug 'itchyny/lightline.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Colorschemes
 Plug 'dracula/vim'
@@ -38,6 +38,8 @@ Plug 'nightsense/snow'
 Plug 'sonph/onehalf'
 Plug 'romainl/flattened'
 Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'jacoborus/tender.vim'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " PHP Plugs
 Plug 'StanAngeloff/php.vim', { 'for' : 'php' }
