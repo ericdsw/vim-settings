@@ -1,24 +1,24 @@
 "-------------------- Plugin Configuration ---------------------"
 
-set nocompatible                            " We want the latest vim setup
+set nocompatible                        " We want the latest vim setup
 so ~/.vim/plug.vim				        " Load plugin configuration file
 
 "-------------------- General Configuration --------------------"
 
-syntax enable                               " Enable syntax highlight
-set backspace=indent,eol,start              " Make backspace behave normally
-set number                                  " Display line numbers
-set autoindent                              " New lines keeps current indentation
-set autoread                                " Reload changes on disk
-let mapleader=','                           " Change default leader to comma
-set backupdir=~/.vim/backup//               " Put backup outside of project root
-set directory=~/.vim/swap//                 " Put swap files outside of project root
+syntax enable                           " Enable syntax highlight
+set backspace=indent,eol,start          " Make backspace behave normally
+set number                              " Display line numbers
+set autoindent                          " New lines keeps current indentation
+set autoread                            " Reload changes on disk
+let mapleader=','                       " Change default leader to comma
+set backupdir=~/.vim/backup//           " Put backup outside of project root
+set directory=~/.vim/swap//             " Put swap files outside of project root
 
-set noerrorbells visualbell t_vb=           " Disable error bells
-set autowriteall                            " Automatically write the file when switching buffers.
-set complete=.,w,b,u                        " Set our desired autocompletion matching.
-set tabstop=4                               " Tab size equivalent to 4 spaces (for languages that use tabs)
-set expandtab                               " Replaces tabs with spaces by default
+set noerrorbells visualbell t_vb=       " Disable error bells
+set autowriteall                        " Automatically write the file when switching buffers.
+set complete=.,w,b,u                    " Set our desired autocompletion matching.
+set tabstop=4                           " Tab size equivalent to 4 spaces (for languages that use tabs)
+set expandtab                           " Replaces tabs with spaces by default
 set softtabstop=4
 set shiftwidth=4
 
@@ -31,20 +31,21 @@ set wrapmargin=0
 
 "-------------------------- Visuals ---------------------------"
 
-set t_Co=256                                " Use 256 colors. This is useful for terminal vim
-set background=dark                         " Background color
+set t_Co=256                            " Use 256 colors (for terminal vim)
+set background=dark                     " Background color
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-" Due to color rendering, graphical vim clients and terminal vim will have different configurations
+" Due to color rendering, graphical vim clients and terminal vim will 
+" have different configurations
 if has("gui_running")
     try
-        colorscheme onedark
+        colorscheme palenight
+        let g:palenight_terminal_italics=1
     catch /^Vim\%((\a\+)\)\=E185/
         " Colorscheme was not found, skipping
     endtry
 else
-    set termguicolors
     set mouse=nicr
     try
        colorscheme palenight
@@ -57,17 +58,13 @@ else
     endtry
 endif
 
-let g:lightline = {
-      \ 'colorscheme': 'palenight',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
-      \ },
-      \ }
+if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 
+if (has("termguicolors"))
+    set termguicolors
+endif
 
 " Make line number background same as editor background
 hi LineNr ctermbg=none
@@ -104,8 +101,9 @@ inoremap jj <esc>
 
 "---------------------- Split Management ----------------------"
 
-set splitbelow                              " New horizontal splits will be created below the current window
-set splitright                              " New vertical splits will be created to the right of the current window
+" Splits should appear either below or to the right
+set splitbelow
+set splitright
 
 " Easier to switch to panes on splits (same navigation as in normal mode)
 nmap <C-J> <C-W><C-J>
@@ -114,6 +112,21 @@ nmap <C-H> <C-W><C-H>
 nmap <C-L> <C-W><C-L>
 
 "--------------------- Plugin Parameters ----------------------"
+
+"/
+"/ Lightline
+"/
+
+let g:lightline = {
+      \ 'colorscheme': 'palenight',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 "/
 "/ Ctrl-P
@@ -185,6 +198,15 @@ let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
 let g:SuperTabDefaultCompletionType = '<C-n>'
 
+"/
+"/ Vim-emmet
+"/
+" let g:user_emmet_leader_key='<Tab>'
+" let g:user_emmet_settings = {
+"     \ 'javascript.jsx': {
+"         \ 'extends': 'jsx',
+"     \ },
+" \}
 
 " Set the python interpreter path
 " Note: the path will be different depending on whether the system is OSX or
@@ -239,7 +261,8 @@ autocmd FileType gdscript setlocal commentstring=#\ %s
 " Maps checking for errors in file
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
 
-" Auto-closes preview window with method or class documentation after exiting insert mode
+" Auto-closes preview window with method or class documentation after exiting insert 
+" mode
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Debugging
@@ -247,26 +270,41 @@ let g:ycm_server_keep_log_files = 1
 let g:ycm_server_log_level = 'debug'
 
 "/
+"/ ALE (Linter)
+"/
+
+let g:ale_linters = {
+\ 'cs': ['OmniSharp']
+\}
+
+"/
 "/ OmniSharp
 "/
 
-let g:OmniSharp_server_type = 'v1'
-
-" Omnisharp / syntastic cooperation
-let g:syntastic_cs_checkers = ['syntax', 'semantic', 'issues']
-
-nnoremap <leader>th :OmniSharpHighlightTypes<cr>
+let g:OmniSharp_timeout=5
+set completeopt=longest,menuone,
+set previewheight=5
+let g:OmniSharp_highlight_types=1
 
 augroup omnisharp_commands
     autocmd!
-    autocmd BufWritePost *.cs call OmniSharp#AddToProject()
-    autocmd FileType cs nnoremap <leader>x :OmniSharpFixIssue<cr>
-    autocmd FileType cs nnoremap <leader>fx :OmniSharpFixUsings<cr>
+
+    autocmd CursorHold *.cs call OmniSharp#TypeLookupWithoutDocumentation()
+    autocmd InsertLeave *.cs call OmniSharp#HighlightBuffer()
+    
+    autocmd FileType cs nnoremap <buffer> <Leader>th :OmniSharpHighlightTypes<CR>
+    autocmd FileType cs nnoremap <buffer> gd :OmniSharpGotoDefinition<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fi :OmniSharpFindImplementation<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fs :OmniSharpFindSymbols<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fu :OmniSharpFindUsages<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>fx :OmniSharpFixUsings<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>tt :OmniSharpTypeLookup<CR>
+    autocmd FileType cs nnoremap <buffer> <Leader>dc :OmniSharpDocumentation<CR>
 augroup END
 
-nnoremap <leader>rl :OmniSharpReloadSolution<cr>
-nnoremap <leader>cf :OmniSharpCodeFormat<cr>
-nnoremap <leader>th :OmniSharpHighlightTypes<cr>
+" Start the omnisharp server for the current solution
+nnoremap <Leader>ss :OmniSharpStartServer<CR>
+nnoremap <Leader>sp :OmniSharpStopServer<CR>
 
 "/
 "/ Godot

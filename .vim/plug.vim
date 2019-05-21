@@ -22,10 +22,12 @@ Plug 'tpope/vim-eunuch'
 Plug 'ervandew/supertab'
 Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
-Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --all' }
+Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --ts-completer --clang-completer --java-completer --rust-completer' }
 Plug 'yegappan/greplace'
-Plug 'itchyny/lightline.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'w0rp/ale'
+Plug 'itchyny/lightline.vim'
+Plug 'shinchu/lightline-gruvbox.vim'
 
 " Colorschemes
 Plug 'dracula/vim'
@@ -49,14 +51,14 @@ Plug 'tobyS/pdv', { 'for' : 'php' }
 Plug 'stephpy/vim-php-cs-fixer', { 'for' : 'php' }
 
 " Godot Plugs
-Plug 'calviken/vim-gdscript3'
-
-" C# Plugs
-Plug 'OmniSharp/omnisharp-vim', { 'for' : 'csharp' }
-Plug 'OrangeT/vim-csharp', { 'for' : 'csharp' }
+" Plug 'file://'.expand('~/Development/projects/misc/vim-gdscript3')
+Plug 'ericdsw/vim-gdscript3', { 'for' : 'gdscript3' }
 
 " Javascript Plugs
 Plug 'pangloss/vim-javascript', { 'for' : 'javascript' }
+
+" C# Plugins
+Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 
