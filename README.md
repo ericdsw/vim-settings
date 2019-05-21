@@ -13,4 +13,4 @@ Then just run the provided install script:
 ./install.sh
 ```
 
-Plugins are managed by plug, which will be automatically installed if it's not already present
+Plugins are managed by Plug, which will be automatically installed if it's not already present.
