@@ -274,8 +274,16 @@ let g:ycm_server_log_level = 'debug'
 "/
 
 let g:ale_linters = {
-\ 'cs': ['OmniSharp']
+\ 'cs': ['OmniSharp'],
+\ 'javascript': ['eslint'],
+\ 'typescript': ['tsserver', 'tslint']
 \}
+
+let g:ale_fixers = {
+\ 'javascript': ['eslint'],
+\ 'typescript': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
 
 "/
 "/ OmniSharp
