@@ -53,12 +53,6 @@ Plug 'stephpy/vim-php-cs-fixer', { 'for' : 'php' }
 " Godot Plugs
 Plug 'ericdsw/vim-gdscript3', { 'for' : 'gdscript3' }
 
-" Javascript Plugs
-Plug 'pangloss/vim-javascript', { 'for' : 'javascript' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-Plug 'peitalin/vim-jsx-typescript', { 'for': 'typescript' }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-
 " C# Plugins
 Plug 'OmniSharp/omnisharp-vim'
 
