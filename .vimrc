@@ -453,6 +453,16 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 
+" Coc extension declaration
+let g:coc_global_extensions = [
+    \'coc-markdownlint',
+    \'coc-highlight',
+    \'coc-json',
+    \'coc-css',
+    \'coc-snippets',
+    \'coc-tsserver'
+    \]
+
 "--------------------- Automatic Commands ---------------------"
 
 " Automatically reload the .vimrc file on edit

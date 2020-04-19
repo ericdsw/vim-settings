@@ -1,31 +1,50 @@
-# vim-settings
-My vim settings, based on laracast's "Vim Mastery" series
+# Vim configuration file
 
-## Pre-requisites
-You will need Python3 installed in your system for the YCM plugin, as well as the following dependencies based on the OS:
+My vim settings, based on laracast's "Vim Mastery" series.
+It relies on the [coc extension](https://github.com/neoclide/coc.nvim), which relies
+on the following
 
-#### MacOS
-Install `cmake` and either `macvim` or `neovim` (or both) via `brew`.
+- The latest version of Node
+- Either neovim >= 0.3.1 or vim >= 8
 
-#### Ubuntu
-As per the official YCM documentation, the following command to install all required dependencies:
+Depending on the OS, the last one could require additional configuration, since
+you will need the nightly versions of neovim if installing in linux. For a
+quick guide on installing it on debian based system, use the following commands:
+
+```bash
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim
 ```
-sudo apt install build-essentials cmake python3-dev
-```
 
-#### Windows
-Just use the same installation instructions as Ubuntu inside WSL.
+To install the python modules, run the following command
+
+```bash
+sudo apt-get install python3-dev python3-pip python3-neovim
+```
 
 ## Installation
 
 First, clone the repository inside the `~/Development/configuration` directory:
-```
+
+```bash
 git clone git@github.com:ericdsw/vim-settings.git ~/Development/configuration/vim-settings
 ```
 
 Then just run the provided install script:
-```
+
+```bash
 ./install.sh
 ```
 
-Plugins are managed by Plug, which will be automatically installed if it's not already present.
+The command should have created the following files and directories:
+
+```bash
+~/.vimrc
+~/.gvimrc
+~/.vim/
+~/.config/nvim
+```
+
+Plugins are managed by Plug, which will be automatically installed if it's not
+already present.
