@@ -1,3 +1,10 @@
 {
-    "tsserver.npm":"/usr/local/bin/npm"
+    "tsserver.npm":"/usr/local/bin/npm",
+    "languageserver": {
+      "godot": {
+        "host": "127.0.0.1",
+        "filetypes": ["gdscript"],
+        "port": 6008
+      }
+    }
 }

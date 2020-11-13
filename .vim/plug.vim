@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plug')
 Plug 'tpope/vim-vinegar'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
-" Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sheerun/vim-polyglot'
@@ -19,15 +18,12 @@ Plug 'tpope/vim-commentary'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
-" Plug 'ervandew/supertab'
-" Plug 'SirVer/ultisnips'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'yegappan/greplace'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
-" Plug 'Valloric/YouCompleteMe', { 'do' : 'python3 install.py --ts-completer --clang-completer --java-completer' }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Colorschemes
@@ -52,7 +48,7 @@ Plug 'tobyS/pdv', { 'for' : 'php' }
 Plug 'stephpy/vim-php-cs-fixer', { 'for' : 'php' }
 
 " Godot Plugs
-Plug 'ericdsw/vim-gdscript3', { 'for' : 'gdscript3' }
+Plug 'habamax/vim-godot', { 'for': 'gdscript' }
 
 " C# Plugins
 Plug 'OmniSharp/omnisharp-vim'

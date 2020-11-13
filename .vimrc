@@ -17,10 +17,10 @@ set directory=~/.vim/swap//             " Put swap files outside of project root
 set noerrorbells visualbell t_vb=       " Disable error bells
 set autowriteall                        " Automatically write the file when switching buffers.
 set complete=.,w,b,u                    " Set our desired autocompletion matching.
-set tabstop=4                           " Tab size equivalent to 4 spaces (for languages that use tabs)
+set tabstop=2                           " Tab size equivalent to 4 spaces (for languages that use tabs)
 set expandtab                           " Replaces tabs with spaces by default
-set softtabstop=4
-set shiftwidth=4
+set softtabstop=2
+set shiftwidth=2
 
 " Get rid of anoying line breaks
 set wrap
@@ -117,14 +117,20 @@ nmap <C-L> <C-W><C-L>
 "/ Lightline
 "/
 
+function! CocCurrentFunction()
+    return get(b:, 'coc_current_function', '')
+endfunction
+
 let g:lightline = {
       \ 'colorscheme': 'palenight',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ],
+      \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
+      \   'gitbranch': 'fugitive#head',
+      \   'currentfunction': 'CocCurrentFunction'
       \ },
       \ }
 
@@ -132,7 +138,7 @@ let g:lightline = {
 "/ Ctrl-P
 "/
 
-let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git\|.import\|addons'
+let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git\|.import\|addons\|exports\'
 let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
 let g:ctrlp_show_hidden=1
 
