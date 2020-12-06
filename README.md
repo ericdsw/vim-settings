@@ -6,6 +6,7 @@ on the following
 
 - The latest version of Node
 - Either neovim >= 0.3.1 or vim >= 8
+- The latest version of [nodejs](https://nodejs.org/en/)
 
 Depending on the OS, the last one could require additional configuration, since
 you will need the nightly versions of neovim if installing in linux. For a
@@ -30,6 +31,9 @@ First, clone the repository inside the `~/Development/configuration` directory:
 ```bash
 git clone git@github.com:ericdsw/vim-settings.git ~/Development/configuration/vim-settings
 ```
+
+Note: there should exist a `~/.config` folder in your user directory so that the
+script can correctly configure neovim's initial install script.
 
 Then just run the provided install script:
 
