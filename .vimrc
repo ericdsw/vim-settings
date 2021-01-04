@@ -138,7 +138,7 @@ let g:lightline = {
 "/ Ctrl-P
 "/
 
-let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git\|.import\|addons\|exports\'
+let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git\|.import\|addons\|exports\|(\.(swp|ico|git|svn))$|Resources/(Images|Sounds)\'
 let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
 let g:ctrlp_show_hidden=1
 
@@ -319,21 +319,6 @@ augroup END
 " Start the omnisharp server for the current solution
 nnoremap <Leader>ss :OmniSharpStartServer<CR>
 nnoremap <Leader>sp :OmniSharpStopServer<CR>
-
-""/
-""/ Godot
-""/
-"if !exists('g:ycm_semantic_triggers')
-"    let g:ycm_semantic_triggers = {}
-"endif
-"let g:ycm_semantic_triggers.gdscript3 = [
-"    \'re!\w+',
-"    \'.',
-"    \'re!\bextends\s+',
-"    \'re!\bexport\(',
-"    \'re!\bfunc\s+',
-"    \'re!"res://[^"]*'
-"    \]
 
 "/
 "/ COC.nvim
