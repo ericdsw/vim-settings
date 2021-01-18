@@ -1,7 +1,7 @@
 "-------------------- Plugin Configuration ---------------------"
 
 set nocompatible                        " We want the latest vim setup
-so ~/.vim/plug.vim				        " Load plugin configuration file
+so ~/.vim/plug.vim				              " Load plugin configuration file
 
 "-------------------- General Configuration --------------------"
 
@@ -147,6 +147,12 @@ nmap <c-R> :CtrlPBufTag<cr>
 
 " Make it easier to browse recent files with Ctrl-P
 nmap <D-e> :CtrlPMRUFiles<cr>
+
+
+" Use ag if it exists.
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 "/
 "/ NERDTree
