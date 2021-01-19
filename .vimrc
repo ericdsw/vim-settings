@@ -90,9 +90,6 @@ set incsearch                               " Enable Incremental Search
 " Shortcut to edit the .vimrc file
 nmap <Leader>ev :tabedit $MYVIMRC<cr>
 
-" Shortcut to edit snippets
-" nmap <Leader>es :e ~/.vim/UltiSnips/
-
 " Easier to search with c-tags
 nmap <Leader>f :tag<space>
 
@@ -135,24 +132,10 @@ let g:lightline = {
       \ }
 
 "/
-"/ Ctrl-P
+"/ FZF
 "/
-
-let g:ctrlp_custom_ignore='vendor\|node_modules\|DS_Store\|git\|.import\|addons\|exports\|(\.(swp|ico|git|svn))$|Resources/(Images|Sounds)\'
-let g:ctrlp_match_window='top,order:ttb,min:1,max:30,results:30'
-let g:ctrlp_show_hidden=1
-
-" Make it easier to search with Ctrl-P for tags
-nmap <c-R> :CtrlPBufTag<cr>
-
-" Make it easier to browse recent files with Ctrl-P
-nmap <D-e> :CtrlPMRUFiles<cr>
-
-
-" Use ag if it exists.
-if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
+nnoremap <silent> <C-p> :Files<CR>
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow
 
 "/
 "/ NERDTree
@@ -192,33 +175,6 @@ let g:php_cs_fixer_fixers_list="-psr0"
 "/
 let g:pdv_template_dir=$HOME ."/.vim/bundle/pdv/templates_snip"
 nnoremap <Leader>d :call pdv#DocumentWithSnip()<CR>
-
-"/
-"/ Ultisnip
-"/
-
-" let g:UltiSnipsExpandTrigger="<tab>"
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-" let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
-
-""/
-""/ YouCompleteMe
-""/
-
-"let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-"let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-"let g:SuperTabDefaultCompletionType = '<C-n>'
-
-"/
-"/ Vim-emmet
-"/
-" let g:user_emmet_leader_key='<Tab>'
-" let g:user_emmet_settings = {
-"     \ 'javascript.jsx': {
-"         \ 'extends': 'jsx',
-"     \ },
-" \}
 
 " Set the python interpreter path
 " Note: the path will be different depending on whether the system is OSX or
@@ -262,24 +218,6 @@ vmap <Leader>su ! awk '{ print length(), $0 \| "sort -n \| cut -d\\  -f2-" }'<cr
 "/ Set comment type for Godot
 "/
 autocmd FileType gdscript setlocal commentstring=#\ %s
-
-"/
-"/ YouCompleteMe
-"/
-
-" Don't display errors in the editor
-" let g:ycm_show_diagnostics_ui = 0
-
-" Maps checking for errors in file
-" nnoremap <F5> :YcmForceCompileAndDiagnostics<CR>
-
-" " Auto-closes preview window with method or class documentation after exiting insert 
-" " mode
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" " Debugging
-" let g:ycm_server_keep_log_files = 1
-" let g:ycm_server_log_level = 'debug'
 
 "/
 "/ ALE (Linter)
@@ -485,3 +423,8 @@ augroup END
 " - gt = go to next tab; Gt = go to previous tab
 " - :cdo = applies to all files listed on quickfix
 " - %s/String/ChangedString = changes all String to ChangedString
+"
+" Example of search and replace with fzf+ripgrep:
+" :grep "pizza"
+" :cfdo %s/pizza/donut/g | update
+" This will replace all instances of "pizza" with "donut" in the project

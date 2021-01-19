@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plug')
 
 " General Plugins
 Plug 'tpope/vim-vinegar'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
@@ -52,6 +51,10 @@ Plug 'habamax/vim-godot', { 'for': 'gdscript' }
 
 " C# Plugins
 Plug 'OmniSharp/omnisharp-vim'
+
+" fzf
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
