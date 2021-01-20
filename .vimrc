@@ -158,13 +158,6 @@ let NERDTreeShowHidden=1
 nmap <Leader><space> :nohlsearch<cr>
 
 "/
-"/ GReplace
-"/
-
-set grepprg=ack
-let g:grep_cmd_opts='--noheading'
-
-"/
 "/ php-cs-fixer
 "/
 let g:php_cs_fixer_level="psr2"
