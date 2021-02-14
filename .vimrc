@@ -1,3 +1,9 @@
+" Make sure we are using the correct terminal command when on windows,
+" otherwise all tools will just throw a "cannot find bash" error
+if has('win32') || has('win64')
+    let &shell='cmd.exe'
+endif
+
 "-------------------- Plugin Configuration ---------------------"
 
 set nocompatible                        " We want the latest vim setup
