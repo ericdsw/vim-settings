@@ -54,7 +54,7 @@ if has("gui_running")
 else
     set mouse=nicr
     try
-       colorscheme palenight
+       colorscheme onedark
        let g:palenight_terminal_italics=1
        if (has("nvim"))
            let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -125,7 +125,7 @@ function! CocCurrentFunction()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ],
