@@ -6,7 +6,8 @@ on the following
 
 - The latest version of Node
 - Either neovim >= 0.3.1 or vim >= 8
-- The latest version of [nodejs](https://nodejs.org/en/)
+- The latest version of [nodejs](https://github.com/nodesource/distributions/blob/master/README.md)
+
 
 Depending on the OS, the last one could require additional configuration, since
 you will need the nightly versions of neovim if installing in linux. For a
