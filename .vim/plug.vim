@@ -25,18 +25,14 @@ Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Colorschemes
-Plug 'dracula/vim'
 Plug 'romainl/Apprentice'
-Plug 'sts10/vim-pink-moon'
-Plug 'junegunn/seoul256.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'morhetz/gruvbox'
-Plug 'nightsense/snow'
-Plug 'sonph/onehalf'
-Plug 'romainl/flattened'
 Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'jacoborus/tender.vim'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'nanotech/jellybeans.vim'
 
 " PHP Plugs
 Plug 'StanAngeloff/php.vim', { 'for' : 'php' }

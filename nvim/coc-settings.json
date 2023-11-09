@@ -1,5 +1,6 @@
 {
     "tsserver.npm":"/usr/local/bin/npm",
+    "suggest.noselect": true,
     "languageserver": {
       "godot": {
         "host": "127.0.0.1",
