@@ -34,6 +34,7 @@ set linebreak
 set nolist
 set textwidth=0
 set wrapmargin=0
+set smartcase
 
 "-------------------------- Visuals ---------------------------"
 
