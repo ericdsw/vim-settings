@@ -33,6 +33,7 @@ Plug 'jacoborus/tender.vim'
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'nanotech/jellybeans.vim'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 " PHP Plugs
 Plug 'StanAngeloff/php.vim', { 'for' : 'php' }

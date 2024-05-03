@@ -55,10 +55,10 @@ if has("gui_running")
 else
     set mouse=nicr
     try
-       colorscheme onedark
-       let g:palenight_terminal_italics=1
-       if (has("nvim"))
-           let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+        colorscheme catppuccin_frappe
+        let g:palenight_terminal_italics=1
+        if (has("nvim"))
+            let $NVIM_TUI_ENABLE_TRUE_COLOR=1
        endif
    catch
         " Colorscheme was not found, skipping
@@ -126,7 +126,7 @@ function! CocCurrentFunction()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'one',
+            \ 'colorscheme': 'catppuccin_frappe',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ],
