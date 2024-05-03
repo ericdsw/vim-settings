@@ -183,7 +183,7 @@ if has("unix")
     if s:uname != "Darwin"
         let g:ycm_server_python_interpreter = '/usr/bin/python3.6'
     else
-        let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+        let g:ycm_server_python_interpreter = '/usr/bin/python3'
     endif
 endif
 

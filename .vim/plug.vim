@@ -23,6 +23,7 @@ Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'SirVer/ultisnips'
 
 " Colorschemes
 Plug 'romainl/Apprentice'
