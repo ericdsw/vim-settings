@@ -12,18 +12,17 @@ Plug 'tpope/vim-vinegar'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'SirVer/ultisnips'
 
 " Colorschemes
 Plug 'romainl/Apprentice'
