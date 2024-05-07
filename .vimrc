@@ -122,6 +122,7 @@ autocmd FileType gdscript setlocal commentstring=#\ %s
 
 "--------------------- Plugin Parameters ----------------------"
 
+
 "/
 "/ Lightline
 "/

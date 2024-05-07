@@ -12,35 +12,18 @@ Plug 'tpope/vim-vinegar'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
-" Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
-" Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-eunuch'
 Plug 'scrooloose/nerdtree', { 'on' : 'NERDTreeToggle' }
 Plug 'christoomey/vim-tmux-navigator'
-" Plug 'dense-analysis/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 
 " Colorschemes
-Plug 'romainl/Apprentice'
 Plug 'joshdick/onedark.vim'
-Plug 'morhetz/gruvbox'
-Plug 'tyrannicaltoucan/vim-deep-space'
-Plug 'jacoborus/tender.vim'
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'nanotech/jellybeans.vim'
 Plug 'catppuccin/vim', { 'as': 'catppuccin' }
-
-" PHP Plugs
-Plug 'StanAngeloff/php.vim', { 'for' : 'php' }
-Plug 'arnaud-lb/vim-php-namespace',  { 'for' : 'php' }
-Plug 'tobyS/vmustache', { 'for' : 'php' }
-Plug 'tobyS/pdv', { 'for' : 'php' }
-Plug 'stephpy/vim-php-cs-fixer', { 'for' : 'php' }
 
 " Godot Plugs
 Plug 'habamax/vim-godot', { 'for': 'gdscript' }
