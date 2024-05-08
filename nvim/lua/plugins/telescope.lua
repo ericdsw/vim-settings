@@ -44,6 +44,10 @@ return {
             filesize_limit = 0.3
           },
           buffer_previewer_maker = new_maker,
+          layout_config = {
+            prompt_position = "top",
+          },
+          sorting_strategy = "ascending",
           file_ignore_patterns = {
             "node_modules",
             "%.png",
@@ -53,6 +57,17 @@ return {
             "%.ogg",
             "%.ico"
           }
+        },
+        pickers = {
+          find_files = {
+            find_command = { 'rg', '--files', '--hidden', '-g', '!.git'},
+            layout_config = {
+              height = 0.70
+            }
+          },
+          buffers = {
+            show_all_buffers = true
+          },
         }
       }
     end
