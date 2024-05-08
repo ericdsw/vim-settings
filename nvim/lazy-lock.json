@@ -12,9 +12,11 @@
   "nvim-comment": { "branch": "main", "commit": "e9ac16ab056695cad6461173693069ec070d2b23" },
   "nvim-lspconfig": { "branch": "master", "commit": "2beb3e9cac3ed9335f8972eb6082f380a4f1f124" },
   "nvim-tree.lua": { "branch": "master", "commit": "76db7ed0da3027882dd0a72de18643c2e26956dc" },
+  "nvim-treesitter": { "branch": "master", "commit": "acefffae27b5105a717b213e19c5975bf7a4ba68" },
   "nvim-web-devicons": { "branch": "master", "commit": "5b9067899ee6a2538891573500e8fd6ff008440f" },
   "plenary.nvim": { "branch": "master", "commit": "08e301982b9a057110ede7a735dd1b5285eb341f" },
   "telescope.nvim": { "branch": "master", "commit": "6312868392331c9c0f22725041f1ec2bef57c751" },
   "vim-fugitive": { "branch": "master", "commit": "ce882460cf3db12e99f8bf579cbf99e331f6dd4f" },
-  "vim-godot": { "branch": "master", "commit": "f9c0b36b299efcc4aa4cb119a2be36a83fe10388" }
+  "vim-godot": { "branch": "master", "commit": "f9c0b36b299efcc4aa4cb119a2be36a83fe10388" },
+  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" }
 }
