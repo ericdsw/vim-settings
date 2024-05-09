@@ -3,6 +3,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.cmd('syntax enable')
+vim.cmd('set completeopt=menu,menuone,noselect')
 
 vim.g.mapleader = ','
 
@@ -30,6 +31,7 @@ vim.opt.splitright = true
 require("config.lazy")
 
 vim.keymap.set('i', 'jj', '<esc>', { noremap = true })
+vim.keymap.set('n', '<Leader><space>', ':nohlsearch<cr>', {})
 
 vim.keymap.set('n', '<C-J>', '<C-W><C-J>', {})
 vim.keymap.set('n', '<C-K>', '<C-W><C-K>', {})
