@@ -8,7 +8,11 @@ return {
     },
     config = function()
       require("lspconfig").gdscript.setup {
-        capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+        capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+        flags = {
+          debounce_text_change = 150
+        },
+        cmd = { "netcat", "localhost", "6008" }
       } 
     end
   }
