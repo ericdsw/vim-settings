@@ -1,49 +1,43 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.6",
-    dependencies = { 'nvim-lua/plenary.nvim' },
+    branch = "0.1.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        config = function()
+          require("telescope").load_extension("fzf")
+        end
+      },
+      "nvim-tree/nvim-web-devicons"
+    },
     config = function()
+
+      local telescope = require("telescope")
       local builtin = require('telescope.builtin')
+      local actions = require("telescope.actions")
+      local previewers = require("telescope.previewers")
+      local Job = require("plenary.job")
+
       vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
       vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
       vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
       vim.keymap.set('n', '<C-p>', builtin.find_files, { silent = true })
 
-      local previewers = require("telescope.previewers")
-      local Job = require("plenary.job")
-      local new_maker = function(filepath, bufnr, opts)
-        filepath = vim.fn.expand(filepath)
-        Job:new({
-          command = "file",
-          args = { "--mime-type", "-b", filepath },
-          on_exit = function(j)
-            local mime_type = vim.split(j:result()[1], "/")[1]
-            if mime_type == "text" then
-              previewers.buffer_previewer_maker(filepath, bufnr, opts)
-            else
-              -- maybe we want to write something to the buffer here
-              vim.schedule(function()
-                vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, { "BINARY" })
-              end)
-            end
-          end
-        }):sync()
-      end
-
-      local actions = require("telescope.actions")
-      require("telescope").setup{
+      telescope.setup {
         defaults = {
+          path_display = { "smart" },
           mappings = {
             i = {
-              ["<esc>"] = actions.close
+              ["<esc>"] = actions.close,
+              ["<C-k>"] = actions.move_selection_previous,
+              ["<C-j>"] = actions.move_selection_next,
+              ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist
             }
           },
-          preview = {
-            filesize_limit = 0.3
-          },
-          buffer_previewer_maker = new_maker,
           layout_config = {
             prompt_position = "top",
           },
@@ -68,6 +62,14 @@ return {
           buffers = {
             show_all_buffers = true
           },
+        },
+        extensions = {
+          fzf = {
+            fuzzy = true,
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = "smart_case"
+          }
         }
       }
     end

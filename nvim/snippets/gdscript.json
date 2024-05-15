@@ -1,0 +1,51 @@
+{
+	"Comment Divisor": {
+		"prefix": "delm",
+		"body" :[
+			"# ================================ $1 ================================ #"
+		],
+		"description": "Creates comment delimiter in godot script"
+	},
+	"Small Delimiter": {
+		"prefix": "delmsmall",
+		"body": [
+			"############### $0"
+		]
+	},
+	"Timer Generator": {
+		"prefix": "tigen",
+		"body": [
+			"TimerGenerator.create_timer(1, $1, self).start()",
+			"$0"
+		],
+		"description": "Creates a TimerGenerator instance"
+	},
+	"Public": {
+		"prefix": "delmpub",
+		"body": [
+			"# ================================= Public ================================== #"
+		],
+		"description": "Public delimiter"
+	},
+	"Private": {
+		"prefix": "delmpriv",
+		"body": [
+			"# ================================= Private ================================= #"
+		],
+		"description": "Private delimiter"
+	},
+	"Lifecycle": {
+		"prefix": "delmlife",
+		"body": [
+			"# ================================ Lifecycle ================================ #"
+		],
+		"description": "Lifecycle delimiter"
+	},
+	"Callbacks": {
+		"prefix": "delmcall",
+		"body": [
+			"# ================================ Callbacks ================================ #"
+		],
+		"description": "Callback delimiter"
+	}
+}

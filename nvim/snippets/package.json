@@ -1,0 +1,11 @@
+{
+  "name": "my-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "gdscript",
+        "path": "./gdscript.json"
+      }
+    ]
+  }
+}
