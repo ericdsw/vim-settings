@@ -1,12 +1,26 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter', 
-    build = function()
-      require("nvim-treesitter.install").update({ with_sync = true })()
-    end,
+    event = { "BufReadPre", "BufNewFile" },
+    build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "gdscript" },
+        ensure_installed = {
+          "gdscript",
+          "lua",
+          "json",
+          "javascript",
+          "typescript",
+          "tsx",
+          "yaml",
+          "html",
+          "css",
+          "markdown",
+          "markdown_inline",
+          "bash",
+          "gitignore",
+          "c"
+        },
         highlight = {
           additional_vim_regex_highlighting = true,
           enable = true,
