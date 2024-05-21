@@ -7,20 +7,16 @@ return {
   --     vim.cmd.colorscheme "catppuccin-frappe"
   --   end
   -- }
-  -- {
-  --   "folke/tokyonight.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   opts = {},
-  --   config = function()
-  --     vim.cmd.colorscheme "tokyonight-night"
-  --   end
-  -- }
   {
-    "neanias/everforest-nvim",
-    priority = 100,
+    'sainnhe/everforest',
+    lazy = false,
+    priority = 1000,
     config = function()
-      vim.cmd.colorscheme "everforest"
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.everforest_enable_italic = true
+      vim.o.background = "dark"
+      vim.cmd.colorscheme('everforest')
     end
-  }
+  } 
 }
