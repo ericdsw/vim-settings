@@ -12,7 +12,7 @@ return {
         flags = {
           debounce_text_change = 150
         },
-        cmd = { "netcat", "localhost", "6008" }
+        cmd = { "netcat", "localhost", "6005" }
       } 
     end
   }
