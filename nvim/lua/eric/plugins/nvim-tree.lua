@@ -10,9 +10,6 @@ return {
 
       local nvimtree = require("nvim-tree")
 
-      vim.g.loaded_netrw = 1
-      vim.g.loaded_netrwPlugin = 1
-
       nvimtree.setup {
         view = {
           width = 35
@@ -22,13 +19,15 @@ return {
         },
         git = {
           ignore = false
-        }
+        },
+        renderer = {
+          group_empty = true
+        },
       }
 
-      local keymap = vim.keymap
-
-      keymap.set("n", "<Leader>1", ":NvimTreeFindFileToggle<cr>", {})
-      keymap.set("n", "<Leader>er", ":NvimTreeRefresh<cr>", {})
+      vim.keymap.set("n", "<Leader>1", ":NvimTreeFindFileToggle<cr>", {})
+      vim.keymap.set("n", "<Leader>er", ":NvimTreeRefresh<cr>", {})
+      vim.keymap.set("n", "<Leader>ef", ":NvimTreeFindfile<cr>", {})
 
     end,
   }
