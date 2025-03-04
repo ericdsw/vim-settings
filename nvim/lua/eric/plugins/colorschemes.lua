@@ -1,12 +1,20 @@
 return {
+  -- {
+  --   'sainnhe/everforest',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.g.everforest_enable_italic = true
+  --     vim.o.background = "dark"
+  --     vim.cmd.colorscheme('everforest')
+  --   end
+  -- },
   {
-    'sainnhe/everforest',
+    'AlexvZyl/nordic.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      vim.g.everforest_enable_italic = true
-      vim.o.background = "dark"
-      vim.cmd.colorscheme('everforest')
+        require('nordic').load()
     end
-  } 
+  },
 }

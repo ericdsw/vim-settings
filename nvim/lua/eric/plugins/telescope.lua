@@ -18,8 +18,6 @@ return {
       local telescope = require("telescope")
       local builtin = require('telescope.builtin')
       local actions = require("telescope.actions")
-      local previewers = require("telescope.previewers")
-      local Job = require("plenary.job")
 
       vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
       vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
@@ -80,8 +78,7 @@ return {
       require('telescope').setup({
         extensions = {
           ["ui-select"] = {
-            require("telescope.themes").get_dropdown {
-            }
+            require("telescope.themes").get_dropdown {}
           }
         }
       })
