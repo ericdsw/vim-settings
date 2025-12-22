@@ -23,29 +23,31 @@ return {
     },
     config = function()
 
-      local lspconfig = require("lspconfig")
       local capabilities = require('cmp_nvim_lsp').default_capabilities(
         vim.lsp.protocol.make_client_capabilities()
       )
 
       -- Lua
-      lspconfig.lua_ls.setup {
+      vim.lsp.config('lua_ls', {
         capabilities = capabilities
-      }
+      })
+      vim.lsp.enable('lua_ls')
 
       -- GDScript configuration
-      lspconfig.gdscript.setup {
+      vim.lsp.config('gdscript', {
         capabilities = capabilities,
         flags = {
           debounce_text_change = 150
         },
-        cmd = { "netcat", "localhost", "6005" }
-      }
+        cmd = { "netcat", "127.0.0.1", "6005" }
+      })
+      vim.lsp.enable('gdscript')
 
       -- Typescript configuration
-      lspconfig.ts_ls.setup {
+      vim.lsp.config('ts_ls', {
         capabilities = capabilities
-      }
+      })
+      vim.lsp.enable('ts_ls')
 
       -- Global keymaps
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
