@@ -36,10 +36,10 @@ return {
       -- GDScript configuration
       vim.lsp.config('gdscript', {
         capabilities = capabilities,
-        flags = {
-          debounce_text_change = 150
-        },
-        cmd = { "netcat", "127.0.0.1", "6005" }
+        -- flags = {
+        --   debounce_text_change = 150
+        -- },
+        -- cmd = { "netcat", "127.0.0.1", "6005" }
       })
       vim.lsp.enable('gdscript')
 
