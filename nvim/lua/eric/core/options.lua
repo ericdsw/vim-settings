@@ -5,6 +5,7 @@ vim.cmd('syntax enable')
 vim.cmd('set completeopt=menu,menuone,noselect')
 
 vim.g.mapleader = ','
+vim.g.diagnostics_active = true
 
 vim.opt.number = true
 vim.opt.autoindent = true
@@ -30,3 +31,5 @@ vim.opt.splitbelow = true
 vim.opt.splitright = true
 
 vim.opt.backspace = "indent,eol,start"
+
+vim.diagnostic.config({ virtual_text = true })
