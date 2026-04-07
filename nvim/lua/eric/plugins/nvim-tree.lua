@@ -14,7 +14,10 @@ return {
                     width = 35
                 },
                 filters = {
-                    custom = { ".DS_Store" },
+                    custom = {
+                        ".DS_Store",
+                        "*.import"
+                    },
                     dotfiles = true
                 },
                 git = {
