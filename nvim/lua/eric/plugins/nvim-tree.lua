@@ -18,7 +18,7 @@ return {
                         ".DS_Store",
                         "*.import"
                     },
-                    dotfiles = true
+                    dotfiles = false
                 },
                 git = {
                     enable = false,
