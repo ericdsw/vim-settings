@@ -6,6 +6,7 @@ return {
     config = function()
       require("nvim-treesitter").setup({
         auto_install = true,
+        ensure_installed = { "tsx", "typescript" },
         highlight = {
           additional_vim_regex_highlighting = true,
           enable = true,
