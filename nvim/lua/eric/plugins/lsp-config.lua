@@ -73,9 +73,6 @@ return {
       })
       vim.lsp.enable('pyright')
 
-      -- Enable language servers
-      -- vim.lsp.enable('lua_ls', 'gdscript', 'ts_ls', 'pyright')
-
       -- Global keymaps
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
